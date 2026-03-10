@@ -1,0 +1,449 @@
+[
+  {
+    "id": "prod-001",
+    "slug": "teclado-mecanico-rgb-pro",
+    "name": "Teclado Mecânico RGB Pro",
+    "description": "Teclado mecânico com switches blue, iluminação RGB por tecla e construção em alumínio. Ideal para digitação precisa e longas sessões de trabalho ou gaming. Possui anti-ghosting em todas as teclas e cabo USB-C removível.",
+    "price": 29990,
+    "originalPrice": 39990,
+    "images": [
+      "/images/products/teclado-mecanico-rgb-01.webp",
+      "/images/products/teclado-mecanico-rgb-02.webp",
+      "/images/products/teclado-mecanico-rgb-03.webp"
+    ],
+    "category": "keyboards",
+    "tags": ["mecânico", "rgb", "gamer", "switches blue", "usb-c"],
+    "rating": 4.7,
+    "reviewCount": 234,
+    "inStock": true,
+    "features": [
+      "Switches mecânicos Blue",
+      "Iluminação RGB por tecla",
+      "Corpo em alumínio escovado",
+      "Anti-ghosting N-Key Rollover",
+      "Cabo USB-C removível"
+    ],
+    "createdAt": "2025-10-15"
+  },
+  {
+    "id": "prod-002",
+    "slug": "teclado-compacto-60-wireless",
+    "name": "Teclado Compacto 60% Wireless",
+    "description": "Teclado compacto 60% sem fio com conectividade Bluetooth 5.0 e USB-C. Switches red lineares para digitação silenciosa e rápida. Bateria de longa duração com até 40 horas de uso contínuo.",
+    "price": 24990,
+    "images": [
+      "/images/products/teclado-60-wireless-01.webp",
+      "/images/products/teclado-60-wireless-02.webp"
+    ],
+    "category": "keyboards",
+    "tags": ["compacto", "60%", "wireless", "bluetooth", "silencioso"],
+    "rating": 4.5,
+    "reviewCount": 187,
+    "inStock": true,
+    "features": [
+      "Layout 60% compacto",
+      "Bluetooth 5.0 + USB-C",
+      "Switches Red lineares",
+      "Bateria 40h de duração",
+      "Compatível com Mac e Windows"
+    ],
+    "createdAt": "2025-11-02"
+  },
+  {
+    "id": "prod-003",
+    "slug": "teclado-membrana-slim",
+    "name": "Teclado Membrana Slim Office",
+    "description": "Teclado de membrana ultra-fino e silencioso, projetado para ambientes de escritório. Teclas de perfil baixo com toque suave e apoio de pulso integrado.",
+    "price": 12990,
+    "originalPrice": 15990,
+    "images": [
+      "/images/products/teclado-slim-office-01.webp",
+      "/images/products/teclado-slim-office-02.webp"
+    ],
+    "category": "keyboards",
+    "tags": ["membrana", "office", "silencioso", "ergonômico", "slim"],
+    "rating": 4.2,
+    "reviewCount": 98,
+    "inStock": true,
+    "features": [
+      "Perfil ultra-fino (18mm)",
+      "Teclas silenciosas de membrana",
+      "Apoio de pulso integrado",
+      "Teclas multimídia dedicadas",
+      "Plug and play USB"
+    ],
+    "createdAt": "2025-09-20"
+  },
+  {
+    "id": "prod-004",
+    "slug": "mouse-gamer-16000dpi",
+    "name": "Mouse Gamer 16000 DPI",
+    "description": "Mouse gamer com sensor óptico de 16000 DPI, 7 botões programáveis e iluminação RGB. Design ergonômico para longas sessões com grip emborrachado nas laterais.",
+    "price": 14990,
+    "originalPrice": 19990,
+    "images": [
+      "/images/products/mouse-gamer-16000-01.webp",
+      "/images/products/mouse-gamer-16000-02.webp",
+      "/images/products/mouse-gamer-16000-03.webp"
+    ],
+    "category": "mice",
+    "tags": ["gamer", "rgb", "16000dpi", "programável", "ergonômico"],
+    "rating": 4.6,
+    "reviewCount": 312,
+    "inStock": true,
+    "features": [
+      "Sensor óptico 16000 DPI ajustável",
+      "7 botões programáveis",
+      "Iluminação RGB customizável",
+      "Grip emborrachado lateral",
+      "Cabo trançado de 1.8m"
+    ],
+    "createdAt": "2025-08-10"
+  },
+  {
+    "id": "prod-005",
+    "slug": "mouse-ergonomico-vertical",
+    "name": "Mouse Ergonômico Vertical",
+    "description": "Mouse vertical sem fio que reduz a tensão no pulso e antebraço. Angulação de 57° para posição natural da mão. Ideal para quem trabalha muitas horas no computador.",
+    "price": 17990,
+    "images": [
+      "/images/products/mouse-vertical-01.webp",
+      "/images/products/mouse-vertical-02.webp"
+    ],
+    "category": "mice",
+    "tags": ["ergonômico", "vertical", "wireless", "saúde", "office"],
+    "rating": 4.4,
+    "reviewCount": 156,
+    "inStock": true,
+    "features": [
+      "Angulação ergonômica de 57°",
+      "Wireless 2.4GHz + Bluetooth",
+      "DPI ajustável (800/1200/1600)",
+      "Bateria recarregável USB-C",
+      "6 botões silenciosos"
+    ],
+    "createdAt": "2025-10-28"
+  },
+  {
+    "id": "prod-006",
+    "slug": "mouse-wireless-ultralight",
+    "name": "Mouse Wireless Ultralight 58g",
+    "description": "Mouse sem fio ultraleve de apenas 58 gramas com sensor de alta precisão. Design honeycomb para ventilação e leveza extrema. Polling rate de 1000Hz para resposta instantânea.",
+    "price": 22990,
+    "originalPrice": 27990,
+    "images": [
+      "/images/products/mouse-ultralight-01.webp",
+      "/images/products/mouse-ultralight-02.webp"
+    ],
+    "category": "mice",
+    "tags": ["ultralight", "wireless", "gamer", "honeycomb", "competitivo"],
+    "rating": 4.8,
+    "reviewCount": 203,
+    "inStock": true,
+    "features": [
+      "Apenas 58g de peso",
+      "Sensor PAW3370 — 19000 DPI",
+      "Polling rate 1000Hz",
+      "Design honeycomb ventilado",
+      "Bateria 70h de duração"
+    ],
+    "createdAt": "2025-12-05"
+  },
+  {
+    "id": "prod-007",
+    "slug": "headset-surround-7-1",
+    "name": "Headset Gamer Surround 7.1",
+    "description": "Headset gamer com som surround virtual 7.1 e drivers de 50mm. Microfone retrátil com cancelamento de ruído. Almofadas de espuma memory foam para máximo conforto.",
+    "price": 19990,
+    "originalPrice": 24990,
+    "images": [
+      "/images/products/headset-surround-01.webp",
+      "/images/products/headset-surround-02.webp",
+      "/images/products/headset-surround-03.webp"
+    ],
+    "category": "headsets",
+    "tags": ["gamer", "surround", "7.1", "microfone", "memory foam"],
+    "rating": 4.5,
+    "reviewCount": 278,
+    "inStock": true,
+    "features": [
+      "Som surround virtual 7.1",
+      "Drivers de 50mm Hi-Fi",
+      "Microfone retrátil com noise cancelling",
+      "Almofadas memory foam",
+      "Compatível com PC, PS5 e Xbox"
+    ],
+    "createdAt": "2025-07-22"
+  },
+  {
+    "id": "prod-008",
+    "slug": "headset-bluetooth-anc",
+    "name": "Headset Bluetooth ANC Premium",
+    "description": "Headset Bluetooth com cancelamento ativo de ruído (ANC) e modo transparência. Som Hi-Res com codec LDAC. Ideal para trabalho remoto, viagens e música.",
+    "price": 34990,
+    "images": [
+      "/images/products/headset-bluetooth-anc-01.webp",
+      "/images/products/headset-bluetooth-anc-02.webp"
+    ],
+    "category": "headsets",
+    "tags": ["bluetooth", "anc", "premium", "hi-res", "trabalho remoto"],
+    "rating": 4.9,
+    "reviewCount": 421,
+    "inStock": true,
+    "features": [
+      "ANC (Cancelamento Ativo de Ruído)",
+      "Modo transparência",
+      "Codec LDAC — Hi-Res Audio",
+      "Bateria 35h (ANC ligado)",
+      "Multipoint — 2 dispositivos simultâneos"
+    ],
+    "createdAt": "2025-11-18"
+  },
+  {
+    "id": "prod-009",
+    "slug": "headset-studio-monitor",
+    "name": "Headset Studio Monitor Referência",
+    "description": "Fone de ouvido de referência para produção musical e mixagem. Resposta de frequência plana e precisa. Design aberto (open-back) para soundstage amplo e natural.",
+    "price": 44990,
+    "originalPrice": 52990,
+    "images": [
+      "/images/products/headset-studio-01.webp",
+      "/images/products/headset-studio-02.webp"
+    ],
+    "category": "headsets",
+    "tags": [
+      "studio",
+      "monitor",
+      "produção musical",
+      "open-back",
+      "referência"
+    ],
+    "rating": 4.7,
+    "reviewCount": 89,
+    "inStock": false,
+    "features": [
+      "Resposta de frequência plana (20Hz-40kHz)",
+      "Design open-back para soundstage natural",
+      "Drivers de 45mm — Neodímio",
+      "Impedância 250Ω — uso profissional",
+      "Cabo destacável de 3m"
+    ],
+    "createdAt": "2025-06-30"
+  },
+  {
+    "id": "prod-010",
+    "slug": "monitor-ultrawide-34-144hz",
+    "name": "Monitor Ultrawide 34\" 144Hz",
+    "description": "Monitor ultrawide curvo de 34 polegadas com resolução UWQHD (3440x1440) e taxa de atualização de 144Hz. Painel IPS com 98% DCI-P3 para cores precisas. Ideal para produtividade e gaming.",
+    "price": 219990,
+    "originalPrice": 259990,
+    "images": [
+      "/images/products/monitor-ultrawide-34-01.webp",
+      "/images/products/monitor-ultrawide-34-02.webp",
+      "/images/products/monitor-ultrawide-34-03.webp"
+    ],
+    "category": "monitors",
+    "tags": ["ultrawide", "144hz", "curvo", "produtividade", "IPS"],
+    "rating": 4.8,
+    "reviewCount": 167,
+    "inStock": true,
+    "features": [
+      "34\" Ultrawide curvo (1500R)",
+      "UWQHD 3440x1440",
+      "144Hz + AMD FreeSync Premium",
+      "Painel IPS — 98% DCI-P3",
+      "USB-C com Power Delivery 65W"
+    ],
+    "createdAt": "2025-09-12"
+  },
+  {
+    "id": "prod-011",
+    "slug": "monitor-4k-27-ips",
+    "name": "Monitor 4K 27\" IPS Profissional",
+    "description": "Monitor 4K UHD de 27 polegadas com painel IPS certificado para cores. Calibrado de fábrica com Delta E<2. Perfeito para design, edição de vídeo e programação.",
+    "price": 189990,
+    "images": [
+      "/images/products/monitor-4k-27-01.webp",
+      "/images/products/monitor-4k-27-02.webp"
+    ],
+    "category": "monitors",
+    "tags": ["4k", "profissional", "design", "IPS", "calibrado"],
+    "rating": 4.6,
+    "reviewCount": 134,
+    "inStock": true,
+    "features": [
+      "4K UHD (3840x2160)",
+      "Painel IPS — 100% sRGB, 95% DCI-P3",
+      "Calibrado de fábrica (Delta E<2)",
+      "Pivô, altura e inclinação ajustáveis",
+      "HDMI 2.1 + DisplayPort 1.4 + USB-C"
+    ],
+    "createdAt": "2025-10-05"
+  },
+  {
+    "id": "prod-012",
+    "slug": "monitor-gamer-27-240hz",
+    "name": "Monitor Gamer 27\" 240Hz",
+    "description": "Monitor gamer Full HD de 27 polegadas com taxa de 240Hz e tempo de resposta de 0.5ms. Painel IPS rápido com G-Sync Compatible. Para jogadores competitivos que precisam de cada milissegundo.",
+    "price": 159990,
+    "originalPrice": 179990,
+    "images": [
+      "/images/products/monitor-gamer-240hz-01.webp",
+      "/images/products/monitor-gamer-240hz-02.webp"
+    ],
+    "category": "monitors",
+    "tags": ["gamer", "240hz", "competitivo", "g-sync", "fast IPS"],
+    "rating": 4.7,
+    "reviewCount": 198,
+    "inStock": true,
+    "features": [
+      "27\" Full HD (1920x1080)",
+      "240Hz — 0.5ms tempo de resposta",
+      "Fast IPS — G-Sync Compatible",
+      "HDR400",
+      "Modo Black Equalizer para FPS"
+    ],
+    "createdAt": "2025-11-25"
+  },
+  {
+    "id": "prod-013",
+    "slug": "mousepad-desk-xxl",
+    "name": "Mousepad Desk XXL 90x40cm",
+    "description": "Mousepad estendido de 90x40cm que cobre teclado e mouse. Superfície de tecido speed para movimentos rápidos e precisos. Base de borracha antiderrapante. Bordas costuradas para durabilidade.",
+    "price": 7990,
+    "originalPrice": 9990,
+    "images": [
+      "/images/products/mousepad-xxl-01.webp",
+      "/images/products/mousepad-xxl-02.webp"
+    ],
+    "category": "accessories",
+    "tags": ["mousepad", "desk", "xxl", "speed", "gamer"],
+    "rating": 4.4,
+    "reviewCount": 445,
+    "inStock": true,
+    "features": [
+      "Dimensão: 90x40cm (XXL)",
+      "Superfície speed em tecido",
+      "Base de borracha antiderrapante",
+      "Bordas costuradas reforçadas",
+      "Espessura de 4mm"
+    ],
+    "createdAt": "2025-08-05"
+  },
+  {
+    "id": "prod-014",
+    "slug": "webcam-full-hd-1080p-autofoco",
+    "name": "Webcam Full HD 1080p Autofoco",
+    "description": "Webcam Full HD com autofoco rápido e microfone duplo com redução de ruído. Ideal para reuniões, streaming e aulas online. Clipe universal para monitor e tripé.",
+    "price": 18990,
+    "images": [
+      "/images/products/webcam-1080p-01.webp",
+      "/images/products/webcam-1080p-02.webp"
+    ],
+    "category": "accessories",
+    "tags": ["webcam", "1080p", "autofoco", "streaming", "home office"],
+    "rating": 4.3,
+    "reviewCount": 267,
+    "inStock": true,
+    "features": [
+      "Full HD 1080p a 30fps",
+      "Autofoco rápido",
+      "Microfone duplo estéreo",
+      "Redução de ruído integrada",
+      "Clipe universal + rosca para tripé"
+    ],
+    "createdAt": "2025-07-15"
+  },
+  {
+    "id": "prod-015",
+    "slug": "hub-usb-c-7-em-1",
+    "name": "Hub USB-C 7 em 1",
+    "description": "Hub USB-C compacto com 7 portas: HDMI 4K, 2x USB 3.0, USB-C PD 100W, SD, microSD e Ethernet Gigabit. Corpo em alumínio com dissipação de calor. Compatível com MacBook, Dell e notebooks USB-C.",
+    "price": 21990,
+    "originalPrice": 26990,
+    "images": [
+      "/images/products/hub-usbc-7em1-01.webp",
+      "/images/products/hub-usbc-7em1-02.webp"
+    ],
+    "category": "accessories",
+    "tags": ["hub", "usb-c", "hdmi", "macbook", "adaptador"],
+    "rating": 4.5,
+    "reviewCount": 189,
+    "inStock": true,
+    "features": [
+      "HDMI 4K@60Hz",
+      "2x USB 3.0 (5Gbps)",
+      "USB-C Power Delivery 100W",
+      "Leitor SD + microSD",
+      "Ethernet Gigabit RJ45"
+    ],
+    "createdAt": "2025-10-20"
+  },
+  {
+    "id": "prod-016",
+    "slug": "apoio-pulso-ergonomico-gel",
+    "name": "Apoio de Pulso Ergonômico em Gel",
+    "description": "Apoio de pulso em gel para teclado, com superfície em tecido macio e base antiderrapante. Reduz a pressão no pulso durante digitação prolongada. Lavável e durável.",
+    "price": 4990,
+    "images": ["/images/products/apoio-pulso-gel-01.webp"],
+    "category": "accessories",
+    "tags": ["ergonômico", "apoio de pulso", "gel", "conforto", "office"],
+    "rating": 4.1,
+    "reviewCount": 332,
+    "inStock": true,
+    "features": [
+      "Gel memory foam adaptável",
+      "Superfície em tecido macio",
+      "Base antiderrapante",
+      "Dimensão: 44x8cm",
+      "Lavável com pano úmido"
+    ],
+    "createdAt": "2025-05-10"
+  },
+  {
+    "id": "prod-017",
+    "slug": "suporte-notebook-aluminio-ajustavel",
+    "name": "Suporte para Notebook em Alumínio",
+    "description": "Suporte ajustável em alumínio para notebooks de 10 a 17 polegadas. Eleva a tela na altura dos olhos para melhorar a postura. Design ventilado para refrigeração passiva. Dobrável para transporte.",
+    "price": 13990,
+    "originalPrice": 16990,
+    "images": [
+      "/images/products/suporte-notebook-01.webp",
+      "/images/products/suporte-notebook-02.webp"
+    ],
+    "category": "accessories",
+    "tags": ["suporte", "notebook", "alumínio", "ergonômico", "portátil"],
+    "rating": 4.6,
+    "reviewCount": 214,
+    "inStock": true,
+    "features": [
+      "Alumínio anodizado premium",
+      "Ajuste de altura e ângulo",
+      "Compatível com 10\" a 17\"",
+      "Design ventilado",
+      "Dobrável — 280g"
+    ],
+    "createdAt": "2025-09-28"
+  },
+  {
+    "id": "prod-018",
+    "slug": "cabo-usbc-thunderbolt-4",
+    "name": "Cabo USB-C Thunderbolt 4 — 1m",
+    "description": "Cabo Thunderbolt 4 certificado com velocidade de 40Gbps e suporte a vídeo 8K. Power Delivery de até 100W para carregamento rápido. Revestimento em nylon trançado para máxima durabilidade.",
+    "price": 16990,
+    "images": ["/images/products/cabo-thunderbolt4-01.webp"],
+    "category": "accessories",
+    "tags": ["cabo", "thunderbolt", "usb-c", "40gbps", "carregamento"],
+    "rating": 4.8,
+    "reviewCount": 76,
+    "inStock": false,
+    "features": [
+      "Thunderbolt 4 certificado",
+      "40Gbps de transferência",
+      "Vídeo 8K ou dual 4K",
+      "Power Delivery 100W",
+      "Nylon trançado — 1 metro"
+    ],
+    "createdAt": "2025-12-01"
+  }
+]

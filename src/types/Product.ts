@@ -1,3 +1,4 @@
+// Tipo do produto
 export interface Product {
   id: string;
   slug: string;
@@ -15,6 +16,7 @@ export interface Product {
   createdAt: string;
 }
 
+// Tipo da categoria do produto
 export type CategorySlug =
   | "keyboard"
   | "mice"
@@ -22,6 +24,7 @@ export type CategorySlug =
   | "monitors"
   | "accesories";
 
+// Tipo da categoria do produto
 export interface Category {
   slug: CategorySlug;
   name: string;

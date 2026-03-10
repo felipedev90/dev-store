@@ -3,8 +3,7 @@ import "../styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Dev Store",
-  description:
-    "A simple e-commerce store built with Next.js, Tailwind CSS, and TypeScript.",
+  description: "A sua loja Dev!",
 };
 
 export default function RootLayout({

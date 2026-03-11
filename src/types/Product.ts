@@ -7,10 +7,10 @@ export interface Product {
   price: number;
   originalPrice?: number;
   images: string[];
-  category: CategorySlug[];
+  category: CategorySlug;
   tags: string[];
   rating: number;
-  reviewsCount: number;
+  reviewCount: number;
   inStock: boolean;
   features: string[];
   createdAt: string;

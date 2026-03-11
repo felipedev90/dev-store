@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "keyboards",
+    "name": "Teclados",
+    "description": "Teclados mecânicos e membrana para trabalho e gaming",
+    "image": "/images/categories/keyboards.webp"
+  },
+  {
+    "slug": "mice",
+    "name": "Mouses",
+    "description": "Mouses ergonômicos e de alta precisão para todos os usos",
+    "image": "/images/categories/mice.webp"
+  },
+  {
+    "slug": "headsets",
+    "name": "Headsets",
+    "description": "Headsets com som imersivo para jogos, calls e música",
+    "image": "/images/categories/headsets.webp"
+  },
+  {
+    "slug": "monitors",
+    "name": "Monitores",
+    "description": "Monitores de alta resolução para produtividade e entretenimento",
+    "image": "/images/categories/monitors.webp"
+  },
+  {
+    "slug": "accessories",
+    "name": "Acessórios",
+    "description": "Mousepads, webcams, hubs USB e outros periféricos essenciais",
+    "image": "/images/categories/accessories.webp"
+  }
+]

@@ -53,7 +53,7 @@ export function getFilteredProducts(params: {
         // mantem no array só os produtos onde pelo menos uma dessas condições é verdadeira.
         p.name.toLowerCase().includes(query) ||
         p.description.toLowerCase().includes(query) ||
-        p.tags.some((tag) => tag.toLowerCase().includes(query)),
+        p.tags.some((tag: string) => tag.toLowerCase().includes(query)),
     );
   }
 

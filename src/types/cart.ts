@@ -1,4 +1,4 @@
-import type { Product } from "./product";
+import type { Product } from "./Product";
 
 // Tipo do item do carrinho - representa um produto e sua quantidade
 export interface CartItem {

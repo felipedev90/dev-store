@@ -1,4 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
+import Button from "@/components/ui/Button";
+import { PackageIcon } from "lucide-react";
 
 export default function Home() {
   return (
@@ -13,7 +16,20 @@ export default function Home() {
               height={630}
             />
           </div>
-          <p>test</p>
+          <div />
+          <div>
+            <span>DevStore, </span>
+            <span> a place for developers.</span>
+            <p>Tudo para seu setup!</p>
+            <p>Periféricos e acessórios tech com os melhores preços</p>
+          </div>
+          <div>
+            <Link href="/products">
+              <Button>
+                Explore nossos produtos <PackageIcon size={24} />
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
     </div>

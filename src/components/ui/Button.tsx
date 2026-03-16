@@ -39,6 +39,8 @@ export default function Button({
     lg: "px-6 py-3 text-lg",
   };
 
+  // Combinando as classes CSS com base na variante, tamanho e quaisquer classes adicionais fornecidas
+  // Exemplo de uso: <Button variant="primary" size="lg" className="my-custom-class">Clique aqui</Button>
   return (
     <button
       className={cn(

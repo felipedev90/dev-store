@@ -12,9 +12,14 @@ export default function Header() {
     <header className="bg-white shadow-sm">
       <Container>
         <div className="flex items-center justify-between py-4">
-          <Link href="/" className="text-xl font-bold">
-            DevStore
-          </Link>
+          <div className="flex flex-col items-center">
+            <Link href="/" className="text-xl font-bold">
+              DevStore
+            </Link>
+            <span className="text-shadow-mauve-400 text-sm">
+              A place for developers
+            </span>
+          </div>
           <nav>
             <Link
               href="/products"

@@ -1,7 +1,7 @@
 import { getFilteredProducts } from "@/lib/products";
 import Container from "@/components/layout/Container";
 import { ProductGrid } from "@/components/product/ProductGrid";
-import ProducFilter from "@/components/product/ProductFilter";
+import ProductFilter from "@/components/product/ProductFilter";
 
 type Props = {
   searchParams: Promise<{
@@ -17,7 +17,7 @@ export default async function ProductsPage({ searchParams }: Props) {
 
   return (
     <Container>
-      <ProducFilter />
+      <ProductFilter />
       <ProductGrid products={products} />
     </Container>
   );

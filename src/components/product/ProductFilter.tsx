@@ -8,6 +8,7 @@ export default function ProductFilter() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
+  // Função usada pelo form de busca e pelo select de ordenação
   function updateFilter(key: string, value: string) {
     // Cria uma cópia dos params atuais da URLS
     const params = new URLSearchParams(searchParams.toString());
@@ -21,6 +22,21 @@ export default function ProductFilter() {
 
     // Navega com todos os params
     router.push(`/products?${params.toString()}`);
+  }
+
+  // Função usada pelos botões de categoria
+  function handleCategory(category: string) {
+    const param = new URLSearchParams(searchParams.toString());
+
+    if (category) {
+      param.set("category", category);
+    } else {
+      param.delete("category");
+    }
+    param.delete("category");
+    setSearch("");
+
+    router.push(`/products?${param.toString()}`);
   }
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
@@ -48,37 +64,37 @@ export default function ProductFilter() {
 
       <div className="flex gap-2">
         <button
-          onClick={() => updateFilter("category", "")}
+          onClick={() => handleCategory( "")}
           className="border border-black rounded-lg cursor-pointer px-4 py-1"
         >
           Todos
         </button>
         <button
-          onClick={() => updateFilter("category", "keyboards")}
+          onClick={() => handleCategory( "keyboards")}
           className="border border-black rounded-lg cursor-pointer px-4 py-1"
         >
           Teclados
         </button>
         <button
-          onClick={() => updateFilter("category", "mice")}
+          onClick={() => handleCategory( "mice")}
           className="border border-black rounded-lg cursor-pointer px-4 py-1"
         >
           Mouses
         </button>
         <button
-          onClick={() => updateFilter("category", "headsets")}
+          onClick={() => handleCategory( "headsets")}
           className="border border-black rounded-lg cursor-pointer   px-4 py-1"
         >
           Headsets
         </button>
         <button
-          onClick={() => updateFilter("category", "monitors")}
+          onClick={() => handleCategory( "monitors")}
           className="border border-black rounded-lg cursor-pointer  px-4 py-1"
         >
           Monitores
         </button>
         <button
-          onClick={() => updateFilter("category", "accessories")}
+          onClick={() => handleCategory( "accessories")}
           className="border border-black rounded-lg cursor-pointer   px-4 py-1"
         >
           Acessórios

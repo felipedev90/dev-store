@@ -1,3 +1,11 @@
+/* 
+Esse componente fornece uma interface para os usuários filtrarem e ordenarem os produtos. Ele inclui:
+- Um campo de busca para pesquisar produtos por nome ou descrição.
+- Botões para filtrar por categoria (teclados, mouses, headsets, monitores e acessórios).
+- Um dropdown para ordenar os produtos por critérios como mais recentes, menor preço, maior preço e mais avaliados.
+- Ele atualiza a URL com os parâmetros de filtro e ordenação, permitindo que os usuários compartilhem links específicos de produtos filtrados.
+*/
+
 "use client";
 
 import React, { useState } from "react";
@@ -33,15 +41,23 @@ export default function ProductFilter() {
     } else {
       param.delete("category");
     }
-    param.delete("category");
+    param.delete("q");
     setSearch("");
-
     router.push(`/products?${param.toString()}`);
   }
 
+  // Função usada pelo form de busca
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    updateFilter("q", search);
+    const param = new URLSearchParams(searchParams.toString());
+
+    if (search) {
+      param.set("q", search);
+    } else {
+      param.delete("q");
+    }
+    param.delete("category");
+    router.push(`/products?${param.toString()}`);
   };
 
   return (
@@ -64,37 +80,37 @@ export default function ProductFilter() {
 
       <div className="flex gap-2">
         <button
-          onClick={() => handleCategory( "")}
+          onClick={() => handleCategory("")}
           className="border border-black rounded-lg cursor-pointer px-4 py-1"
         >
           Todos
         </button>
         <button
-          onClick={() => handleCategory( "keyboards")}
+          onClick={() => handleCategory("keyboards")}
           className="border border-black rounded-lg cursor-pointer px-4 py-1"
         >
           Teclados
         </button>
         <button
-          onClick={() => handleCategory( "mice")}
+          onClick={() => handleCategory("mice")}
           className="border border-black rounded-lg cursor-pointer px-4 py-1"
         >
           Mouses
         </button>
         <button
-          onClick={() => handleCategory( "headsets")}
+          onClick={() => handleCategory("headsets")}
           className="border border-black rounded-lg cursor-pointer   px-4 py-1"
         >
           Headsets
         </button>
         <button
-          onClick={() => handleCategory( "monitors")}
+          onClick={() => handleCategory("monitors")}
           className="border border-black rounded-lg cursor-pointer  px-4 py-1"
         >
           Monitores
         </button>
         <button
-          onClick={() => handleCategory( "accessories")}
+          onClick={() => handleCategory("accessories")}
           className="border border-black rounded-lg cursor-pointer   px-4 py-1"
         >
           Acessórios

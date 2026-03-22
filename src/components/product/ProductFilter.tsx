@@ -1,3 +1,11 @@
+/* 
+Esse componente fornece uma interface para os usuários filtrarem e ordenarem os produtos. Ele inclui:
+- Um campo de busca para pesquisar produtos por nome ou descrição.
+- Botões para filtrar por categoria (teclados, mouses, headsets, monitores e acessórios).
+- Um dropdown para ordenar os produtos por critérios como mais recentes, menor preço, maior preço e mais avaliados.
+- Ele atualiza a URL com os parâmetros de filtro e ordenação, permitindo que os usuários compartilhem links específicos de produtos filtrados.
+*/
+
 "use client";
 
 import React, { useState } from "react";

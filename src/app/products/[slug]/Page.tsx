@@ -66,7 +66,7 @@ export default async function ProductPage({ params }: Props) {
                 return <Star key={i} className="text-gray-300 fill-transparent" />;
               }
             })}
-            {product.rating.toFixed(1)}
+            <span className="ml-1 text-sm text-gray-600 font-medium">{product.rating.toFixed(1)}</span>
           </span>
           <p className="text-gray-700">{product.description}</p>
           <ul className="list-disc list-inside">

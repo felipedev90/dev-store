@@ -1,10 +1,11 @@
-import { getProductBySlug, getAllProducts } from "@/lib/products";
+import Link from "next/link";
 import Image from "next/image";
+import { Star } from "lucide-react"
 import Badge from "@/components/ui/Badge";
-import { formatPrice, getDiscountPercentage } from "@/lib/utils";
 import { notFound } from "next/navigation";
 import Container from "@/components/layout/Container";
-import { Star } from "lucide-react"
+import { formatPrice, getDiscountPercentage } from "@/lib/utils";
+import { getProductBySlug, getAllProducts } from "@/lib/products";
 type Props = {
   params: Promise<{ slug: string }>;
 };
@@ -38,9 +39,19 @@ export default async function ProductPage({ params }: Props) {
 
   return (
     <Container className="py-8">
+      <Link href="/products" className="text-sm text-blue-500 hover:underline mb-4 inline-block">
+        &larr; Voltar para produtos
+      </Link>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-1 lg:gap-8 max-w-[70vw] mx-auto  p-1 md:p-6  shadow">
         <div className="relative w-full h-96 ">
           <Image src={product.images[0]} alt={product.name} fill priority className="relative w-full h-64 md:h-96 object-contain"/>
+          <div className="absolute top-6 right-3 z-10">
+            {product.originalPrice && (
+              <Badge variant="discount">
+                {getDiscountPercentage(product.price, product.originalPrice)}% OFF
+              </Badge>
+            )}
+          </div>
         </div>
 
         <div className="flex flex-col gap-4">
@@ -62,11 +73,6 @@ export default async function ProductPage({ params }: Props) {
             </span>
           )}
           <span className="text-xl font-bold">{formatPrice(product.price)}</span>
-          {product.originalPrice && (
-            <Badge variant="discount">
-              {getDiscountPercentage(product.price, product.originalPrice)}% OFF
-            </Badge>
-          )}
         </div>
       </div>
     </Container>

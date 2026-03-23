@@ -78,55 +78,26 @@ export default function ProductFilter() {
         </button>
       </form>
 
-      <div className="flex gap-2">
-        <button
-          onClick={() => handleCategory("")}
+      <div className="flex flex-col md:flex-row gap-4">
+        <select onChange={(e) => handleCategory(e.target.value)} className="border border-black rounded-lg cursor-pointer px-4 py-1">
+          <option value="">Filtrar por categoria</option>
+          <option value="keyboards">Teclados</option>
+          <option value="mice">Mouses</option>
+          <option value="headsets">Headsets</option>
+          <option value="monitors">Monitores</option>
+          <option value="accessories">Acessórios</option>
+        </select>
+        <select
+          onChange={(e) => updateFilter("sort", e.target.value)}
           className="border border-black rounded-lg cursor-pointer px-4 py-1"
         >
-          Todos
-        </button>
-        <button
-          onClick={() => handleCategory("keyboards")}
-          className="border border-black rounded-lg cursor-pointer px-4 py-1"
-        >
-          Teclados
-        </button>
-        <button
-          onClick={() => handleCategory("mice")}
-          className="border border-black rounded-lg cursor-pointer px-4 py-1"
-        >
-          Mouses
-        </button>
-        <button
-          onClick={() => handleCategory("headsets")}
-          className="border border-black rounded-lg cursor-pointer   px-4 py-1"
-        >
-          Headsets
-        </button>
-        <button
-          onClick={() => handleCategory("monitors")}
-          className="border border-black rounded-lg cursor-pointer  px-4 py-1"
-        >
-          Monitores
-        </button>
-        <button
-          onClick={() => handleCategory("accessories")}
-          className="border border-black rounded-lg cursor-pointer   px-4 py-1"
-        >
-          Acessórios
-        </button>
+          <option value="">Ordenar por</option>
+          <option value="recent">Mais recentes</option>
+          <option value="price-asc">Menor preço</option>
+          <option value="price-desc">Maior preço</option>
+          <option value="rating">Mais avaliados</option>
+        </select>
       </div>
-
-      <select
-        onChange={(e) => updateFilter("sort", e.target.value)}
-        className="border border-black rounded-lg cursor-pointer px-4 py-1"
-      >
-        <option value="">Ordenar por</option>
-        <option value="recent">Mais recentes</option>
-        <option value="price-asc">Menor preço</option>
-        <option value="price-desc">Maior preço</option>
-        <option value="rating">Mais avaliados</option>
-      </select>
     </div>
   );
 }

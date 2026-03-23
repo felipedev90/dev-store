@@ -5,11 +5,12 @@ Utiliza o componente Container para garantir que o conteúdo do cabeçalho estej
 
 import Link from "next/link";
 import Container from "./Container";
-import { ShoppingCart } from "lucide-react";
+import CartIcon from "../cart/CartIcon";
+
 
 export default function Header() {
   return (
-    <header className="bg-white shadow-sm">
+    <header className="bg-white shadow-sm fixed w-full z-50">
       <Container>
         <div className="flex items-center justify-between py-4">
           <div className="flex flex-col items-center">
@@ -29,7 +30,7 @@ export default function Header() {
             </Link>
           </nav>
           <div>
-            <ShoppingCart size={24} />
+            <CartIcon />
           </div>
         </div>
       </Container>

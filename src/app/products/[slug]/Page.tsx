@@ -6,6 +6,8 @@ import { notFound } from "next/navigation";
 import Container from "@/components/layout/Container";
 import { formatPrice, getDiscountPercentage } from "@/lib/utils";
 import { getProductBySlug, getAllProducts } from "@/lib/products";
+import AddToCartButton from "@/components/cart/addToCartButton";
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
@@ -81,6 +83,7 @@ export default async function ProductPage({ params }: Props) {
               </span>
             )}
             <span className="text-xl font-bold">{formatPrice(product.price)}</span>
+            <AddToCartButton product={product} />
           </div>
         </div>
       </div>

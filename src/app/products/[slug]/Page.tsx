@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Star } from "lucide-react"
+import { Star, StarHalf } from "lucide-react"
 import Badge from "@/components/ui/Badge";
 import { notFound } from "next/navigation";
 import Container from "@/components/layout/Container";
@@ -42,9 +42,9 @@ export default async function ProductPage({ params }: Props) {
       <Link href="/products" className="text-sm text-blue-500 hover:underline mb-4 inline-block">
         &larr; Voltar para produtos
       </Link>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-1 lg:gap-8 max-w-[70vw] mx-auto  p-1 md:p-6  shadow">
-        <div className="relative w-full h-96 ">
-          <Image src={product.images[0]} alt={product.name} fill priority className="relative w-full h-64 md:h-96 object-contain"/>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-1 lg:gap-8 max-w-[100vw] md:max-w-[70vw] mx-auto p-1 md:p-6 shadow" >
+        <div className="relative w-full h-64 md:h-96 bg-gray-50 rounded-lg overflow-hidden">
+          <Image src={product.images[0]} alt={product.name} fill priority className="object-contain object-center"/>
           <div className="absolute top-6 right-3 z-10">
             {product.originalPrice && (
               <Badge variant="discount">
@@ -57,9 +57,16 @@ export default async function ProductPage({ params }: Props) {
         <div className="flex flex-col gap-4">
           <h2 className="text-2xl font-bold">{product.name}</h2>
           <span className="flex items-center gap-1">
-            {Array.from({ length: 5 }, (_, i) => (
-              <Star key={i} className={i < product.rating ? "text-yellow-500" : "text-gray-300"} />
-            ))}
+            {Array.from({ length: 5 }, (_, i) => {
+              if (i < Math.floor(product.rating)) {
+                return <Star key={i} className="text-yellow-500 fill-yellow-500" />;
+              } else if (i < product.rating) {
+                return <StarHalf key={i} className="text-yellow-500 fill-yellow-500" />;
+              } else {
+                return <Star key={i} className="text-gray-300 fill-transparent" />;
+              }
+            })}
+            {product.rating.toFixed(1)}
           </span>
           <p className="text-gray-700">{product.description}</p>
           <ul className="list-disc list-inside">
@@ -67,12 +74,14 @@ export default async function ProductPage({ params }: Props) {
               <li key={feature}>{feature}</li>
             ))}
           </ul>
-          {product.originalPrice && (
-            <span className="text-gray-500 line-through">
-              {formatPrice(product.originalPrice)}
-            </span>
-          )}
-          <span className="text-xl font-bold">{formatPrice(product.price)}</span>
+          <div className="flex flex-col">
+            {product.originalPrice && (
+              <span className="text-gray-500 line-through">
+                {formatPrice(product.originalPrice)}
+              </span>
+            )}
+            <span className="text-xl font-bold">{formatPrice(product.price)}</span>
+          </div>
         </div>
       </div>
     </Container>

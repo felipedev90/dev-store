@@ -79,8 +79,12 @@ export default function ProductFilter() {
       </form>
 
       <div className="flex flex-col md:flex-row gap-4">
-        <select onChange={(e) => handleCategory(e.target.value)} className="border border-black rounded-lg cursor-pointer px-4 py-1">
+        <select
+          onChange={(e) => handleCategory(e.target.value)}
+          className="border border-black rounded-lg cursor-pointer px-4 py-1"
+        >
           <option value="">Filtrar por categoria</option>
+          <option value="">Todos</option>
           <option value="keyboards">Teclados</option>
           <option value="mice">Mouses</option>
           <option value="headsets">Headsets</option>

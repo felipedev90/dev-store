@@ -41,7 +41,7 @@ export default function CartSidebar() {
             {items.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-[40vh]">
                 <p className="text-lg text-gray-500">Seu carrinho está vazio.</p>
-                <Link href="/products" className="text-blue-500 hover:underline mt-2 inline-block font-medium">
+                <Link href="/products" onClick={toggleCart} className="text-blue-500 hover:underline mt-2 inline-block font-medium">
                   Continuar comprando
                 </Link>
               </div>

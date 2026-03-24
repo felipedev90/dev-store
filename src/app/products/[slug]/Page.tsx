@@ -45,7 +45,7 @@ export default async function ProductPage({ params }: Props) {
         &larr; Voltar para produtos
       </Link>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-1 lg:gap-8 max-w-[100vw] md:max-w-[70vw] mx-auto p-1 md:p-6 shadow-xl rounded-lg" >
-        <div className="relative w-full h-64 md:h-96 bg-gray-50 rounded-lg overflow-hidden">
+        <div className="relative w-full h-64 md:h-100 bg-gray-50 rounded-lg overflow-hidden">
           <Image src={product.images[0]} alt={product.name} fill priority className="object-contain object-center"/>
           <div className="absolute top-6 right-3 z-10">
             {product.originalPrice && (
@@ -56,9 +56,9 @@ export default async function ProductPage({ params }: Props) {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2">
           <h2 className="text-2xl font-bold">{product.name}</h2>
-          <span className="flex items-center gap-1">
+          <span className="flex items-center gap-1 pb-2 border-b">
             {Array.from({ length: 5 }, (_, i) => {
               if (i < Math.floor(product.rating)) {
                 return <Star key={i} className="text-yellow-500 fill-yellow-500" />;
@@ -70,7 +70,7 @@ export default async function ProductPage({ params }: Props) {
             })}
             <span className="ml-1 text-sm text-gray-600 font-medium">{product.rating.toFixed(1)}</span>
           </span>
-          <p className="text-gray-700">{product.description}</p>
+          <p className="text-gray-700 pt-2">{product.description}</p>
           <ul className="list-disc list-inside">
             {product.features.map((feature) => (
               <li key={feature}>{feature}</li>
@@ -82,7 +82,7 @@ export default async function ProductPage({ params }: Props) {
                 {formatPrice(product.originalPrice)}
               </span>
             )}
-            <span className="text-xl font-bold">{formatPrice(product.price)}</span>
+            <span className="text-3xl font-bold pb-4 text-end">{formatPrice(product.price)}</span>
             <AddToCartButton product={product} />
           </div>
         </div>

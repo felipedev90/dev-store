@@ -99,7 +99,7 @@ export default async function ProductPage({ params }: Props) {
           </ul>
           <div className="flex flex-col">
             {product.originalPrice && (
-              <span className="text-gray-500 line-through">
+              <span className="text-gray-600 line-through">
                 {formatPrice(product.originalPrice)}
               </span>
             )}

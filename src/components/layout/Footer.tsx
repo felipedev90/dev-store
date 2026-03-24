@@ -22,6 +22,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-600 transition-colors scale-110"
+              arial-label="LinkedIn"
             >
               <Linkedin size={24} />
             </a>
@@ -30,6 +31,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-600 transition-colors scale-110"
+              arial-label="GitHub"
             >
               <Github size={24} />
             </a>
@@ -38,6 +40,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-600 transition-colors scale-110"
+              arial-label="Email"
             >
               <Mail size={24} />
             </a>

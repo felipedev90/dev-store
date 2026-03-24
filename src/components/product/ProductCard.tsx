@@ -39,7 +39,7 @@ export function ProductCard({ product }: { product: Product }) {
         <div className="flex items-center justify-between">
           {/* Preço original */}
           {product.originalPrice && (
-            <span className="line-through text-gray-400">
+            <span className="line-through text-gray-600">
               {formatPrice(product.originalPrice)}
             </span>
           )}

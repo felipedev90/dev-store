@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, beforeEach } from "vitest";
-import AddToCartButton from "./addToCartButton";
+import AddToCartButton from "./AddToCartButton";
 import { useCartStore } from "@/store/cart-store";
 import type { Product } from "@/types";
 

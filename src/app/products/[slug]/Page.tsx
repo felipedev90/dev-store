@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import Container from "@/components/layout/Container";
 import { formatPrice, getDiscountPercentage } from "@/lib/utils";
 import { getProductBySlug, getAllProducts } from "@/lib/products";
-import AddToCartButton from "@/components/cart/addToCartButton";
+import AddToCartButton from "@/components/cart/AddToCartButton";
 
 type Props = {
   params: Promise<{ slug: string }>;

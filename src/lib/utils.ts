@@ -24,3 +24,20 @@ export function getDiscountPercentage(
 export function cn(...classes: (string | boolean | undefined)[]): string {
   return classes.filter(Boolean).join(" ");
 }
+
+// Função para formatar CEP
+export const formatCep = (value: string) => {
+  return value
+    .replace(/\D/g, "") // Remove caracteres não numéricos
+    .replace(/^(\d{5})(\d)/, "$1-$2") // Adiciona hífen após os primeiros 5 dígitos
+    .slice(0, 9); // Limita a 9 caracteres
+};
+
+// Função para formatar telefone
+export const formatPhone = (value: string) => {
+  return value
+    .replace(/\D/g, "") // Remove caracteres não numéricos
+    .slice(0, 11) // Limita a 11 dígitos
+    .replace(/^(\d{2})(\d)/, "($1) $2") // Adiciona parênteses ao DDD
+    .replace(/(\d{4,5})(\d{4})$/, "$1-$2"); // Adiciona hífen entre os últimos 8 dígitos
+};

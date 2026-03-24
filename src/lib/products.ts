@@ -1,6 +1,6 @@
 import type { Product, Category } from "@/types";
-import productsData from "@/data/products.json";
-import categoriesData from "@/data/categories.json";
+import productsData from "@/data/Products.json";
+import categoriesData from "@/data/Categories.json";
 
 const products: Product[] = productsData as unknown as Product[];
 const categories: Category[] = categoriesData as unknown as Category[];
@@ -11,6 +11,7 @@ export function getAllProducts(): Product[] {
 }
 
 // Função que retorna um produto pelo slug. Se não encontrar retorna undefined
+// O slug é uma string única que identifica um produto, geralmente usada na URL para acessar a página do produto. Ex: "smartphone-xyz"
 export function getProductBySlug(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug);
 }

@@ -13,3 +13,10 @@ export interface CheckoutFormData {
     zipCode: string;
   };
 }
+
+export interface AddressData {
+  street: string;
+  neighborhood: string;
+  city: string;
+  state: string;
+}

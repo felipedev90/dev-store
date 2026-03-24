@@ -8,7 +8,12 @@ export default function CartIcon() {
   const toggleCart = useCartStore((state) => state.toggleCart);
 
   return (
-    <button onClick={toggleCart} className="relative">
+    <button
+      onClick={toggleCart}
+      className="relative"
+      aria-label="Abrir carrinho de compras"
+      title="Abrir carrinho de compras"
+    >
       <ShoppingCart size={24} className="cursor-pointer" />
       {totalItems > 0 && (
         <span className="absolute -top-2 -right-3">

@@ -10,7 +10,9 @@ export default function Error({
 }) {
   return (
     <Container>
-      <h2 className="text-xl font-bold text-gray-800">Something went wrong!</h2>
+      <h2 className="text-xl font-bold text-gray-800 pt-6">
+        Something went wrong!
+      </h2>
       <p className="text-gray-600">{error.message}</p>
       <button
         onClick={() => reset()}

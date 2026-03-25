@@ -4,6 +4,8 @@ import Button from "@/components/ui/Button";
 import Container from "@/components/layout/Container";
 import { ProductGrid } from "@/components/product/ProductGrid";
 import { getAllCategories, getFeaturedProducts } from "@/lib/products";
+import Newsletter from "@/components/layout/Newsletter";
+import { Truck, Shield, CreditCard } from "lucide-react";
 
 export default function Home() {
   const productsCategory = getAllCategories();
@@ -39,18 +41,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRODUTOS EM DESTAQUE*/}
-      <section className="py-12">
-        <Container>
-          <h2 className="text-2xl font-bold mb-8">Produtos em destaque</h2>
-          <ProductGrid products={featuredProducts} />
-        </Container>
+      {/* BENEFÍCIOS */}
+      <section className="py-12 hidden md:block">
+        <div className="relative">
+          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-40">
+            <div className="flex items-center space-x-2">
+              <Truck size={24} />
+              <span className="text-sm">
+                <strong className="text-blue-800">Frete grátis</strong> acima de
+                R$ 200
+              </span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Shield size={24} />
+              <span className="text-sm">
+                <strong className="text-blue-800">Compra segura</strong>
+              </span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <CreditCard size={24} />
+              <span className="text-sm">
+                <strong className="text-blue-800">Parcelamento</strong> em até
+                12x sem juros
+              </span>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* CATEGORIAS */}
-      <section className="py-12">
+      <section>
         <Container>
-          <h2 className="text-2xl font-bold mb-8">Categorias</h2>
+          <h2 className="text-2xl font-bold mb-8 pt-6 md:pt-0">Categorias</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {productsCategory.map((category) => (
               <Link
@@ -75,6 +97,16 @@ export default function Home() {
             ))}
           </div>
         </Container>
+
+        {/* PRODUTOS EM DESTAQUE*/}
+        <section className="py-12">
+          <Container>
+            <h2 className="text-2xl font-bold mb-8">Produtos em destaque</h2>
+            <ProductGrid products={featuredProducts} />
+          </Container>
+        </section>
+
+        <Newsletter />
       </section>
     </>
   );

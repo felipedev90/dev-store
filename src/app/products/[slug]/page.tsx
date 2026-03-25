@@ -7,6 +7,7 @@ import Container from "@/components/layout/Container";
 import { formatPrice, getDiscountPercentage } from "@/lib/utils";
 import { getProductBySlug, getAllProducts } from "@/lib/products";
 import AddToCartButton from "@/components/cart/AddToCartButton";
+import AddToFavoriteButton from "@/components/favorites/AddToFavorite";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -67,7 +68,10 @@ export default async function ProductPage({ params }: Props) {
         </div>
 
         <div className="flex flex-col gap-2">
-          <h2 className="text-2xl font-bold">{product.name}</h2>
+          <div className="flex items-center justify-between">
+            <h2 className="text-2xl font-bold">{product.name}</h2>
+            <AddToFavoriteButton product={product} />
+          </div>
           <span className="flex items-center gap-1 pb-2 border-b">
             {Array.from({ length: 5 }, (_, i) => {
               if (i < Math.floor(product.rating)) {

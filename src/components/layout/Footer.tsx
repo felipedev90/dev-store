@@ -3,7 +3,7 @@ import { Linkedin, Github, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+    <footer>
       <Container className="py-3 lg:py-6 lg:flex lg:flex-row lg:justify-around lg:items-center">
         <div className="flex flex-col justify-center items-center">
           <p>© DevStore {new Date().getFullYear()}</p>

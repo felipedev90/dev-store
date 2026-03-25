@@ -2,11 +2,21 @@
 Componente responsável por renderizar o cabeçalho do site, incluindo o nome da loja, um link para a página de produtos e um ícone de carrinho de compras. 
 Utiliza o componente Container para garantir que o conteúdo do cabeçalho esteja alinhado e espaçado corretamente.
 */
-
+"use client";
 import Link from "next/link";
 import Container from "./Container";
-import CartIcon from "../cart/CartIcon";
+import dynamic from "next/dynamic";
 
+const CartIcon = dynamic(() => import("@/components/cart/CartIcon"), {
+  ssr: false,
+});
+
+const FavoriteIcon = dynamic(
+  () => import("@/components/favorites/FavoriteIcon"),
+  {
+    ssr: false,
+  },
+);
 
 export default function Header() {
   return (
@@ -29,7 +39,8 @@ export default function Header() {
               Produtos
             </Link>
           </nav>
-          <div>
+          <div className="flex items-center gap-3 md:gap-4">
+            <FavoriteIcon />
             <CartIcon />
           </div>
         </div>

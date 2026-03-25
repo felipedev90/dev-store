@@ -5,6 +5,7 @@ import Footer from "../components/layout/Footer";
 import "../styles/globals.css";
 import CartSidebar from "@/components/cart/CartSideBar";
 
+
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",

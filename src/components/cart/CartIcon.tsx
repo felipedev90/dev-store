@@ -11,8 +11,8 @@ export default function CartIcon() {
     <button
       onClick={toggleCart}
       className="relative"
-      aria-label="Abrir carrinho de compras"
-      title="Abrir carrinho de compras"
+      aria-label="Abrir carrinho"
+      suppressHydrationWarning
     >
       <ShoppingCart size={24} className="cursor-pointer" />
       {totalItems > 0 && (

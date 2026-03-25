@@ -1,6 +1,6 @@
 import type { Product, Category } from "@/types";
-import productsData from "@/data/Products.json";
-import categoriesData from "@/data/Categories.json";
+import productsData from "@/data/products.json";
+import categoriesData from "@/data/categories.json";
 
 const products: Product[] = productsData as unknown as Product[];
 const categories: Category[] = categoriesData as unknown as Category[];

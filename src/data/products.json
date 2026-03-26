@@ -262,10 +262,7 @@
     "name": "Monitor 4K 27\" IPS Profissional",
     "description": "Monitor 4K UHD de 27 polegadas com painel IPS certificado para cores. Calibrado de fábrica com Delta E<2. Perfeito para design, edição de vídeo e programação.",
     "price": 189990,
-    "images": [
-      "/images/products/monitor-4k-27-01.webp",
-      "/images/products/monitor-4k-27-02.webp"
-    ],
+    "images": ["/images/products/monitor-4k-27-01.webp"],
     "category": "monitors",
     "tags": ["4k", "profissional", "design", "IPS", "calibrado"],
     "rating": 4.6,

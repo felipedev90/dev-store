@@ -49,7 +49,7 @@ export default async function ProductPage({ params }: Props) {
         &larr; Voltar para produtos
       </Link>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-1 lg:gap-8 max-w-[100vw] md:max-w-[70vw] mx-auto p-1 md:p-6 shadow-xl rounded-lg">
-        <div className="relative w-full h-64 md:h-100 bg-gray-50 rounded-lg overflow-hidden">
+        <div className="relative w-full h-64 md:h-100 bg-white rounded-lg overflow-hidden">
           <Image
             src={product.images[0]}
             alt={product.name}

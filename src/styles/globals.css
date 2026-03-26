@@ -19,10 +19,3 @@ body {
 .animate-scroll {
   animation: ticker 40s linear infinite;
 }
-
-/* Pausa a animação quando o mouse passa por cima (UX muito boa!) 
-.animate-scroll:hover {
-  animation-play-state: paused;
-  
-}
-*/

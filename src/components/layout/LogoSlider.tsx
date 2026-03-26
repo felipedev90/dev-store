@@ -25,7 +25,7 @@ export default function LogoSlider() {
                 key={`${partner.name}-${index}`}
                 className="flex-none w-40 md:w-60 h-24 flex items-center justify-center px-4 md:px-10"
               >
-                <div className="relative h-full w-full max-h-12 grayscale  group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 cursor-pointer">
+                <div className="relative h-full w-full max-h-12 lg:grayscale lg:group-hover:grayscale-0 lg:group-hover:opacity-100 transition-all duration-300 cursor-pointer">
                   <Image
                     src={partner.logo}
                     alt={`Logo da ${partner.name}`}

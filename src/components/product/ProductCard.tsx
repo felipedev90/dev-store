@@ -3,7 +3,7 @@ import type { Product } from "@/types";
 import Badge from "../ui/Badge";
 import Image from "next/image";
 import Link from "next/link";
-import { Star, Trash2 } from "lucide-react"; // Importe a lixeira aqui!
+import { Star, Trash2 } from "lucide-react";
 
 // Criamos uma interface para receber o produto e a função de remover opcional
 interface ProductCardProps {
@@ -15,7 +15,6 @@ export function ProductCard({ product, onRemove }: ProductCardProps) {
   return (
     <div className="relative group h-full">
       <Link href={`/products/${product.slug}`}>
-
         <div className="p-4 transition-shadow cursor-pointer hover:shadow-lg rounded h-full bg-white flex flex-col">
           <div className="relative h-48 w-full overflow-hidden rounded-t">
             <Image
@@ -58,8 +57,8 @@ export function ProductCard({ product, onRemove }: ProductCardProps) {
       {onRemove && (
         <button
           onClick={(e) => {
-            e.preventDefault(); 
-            onRemove(); 
+            e.preventDefault();
+            onRemove();
           }}
           className="absolute top-5 left-5 z-20 p-2 bg-white rounded-full shadow-md text-red-500 hover:bg-red-50 hover:scale-110 transition-all opacity-0 group-hover:opacity-100"
           aria-label="Remover dos favoritos"

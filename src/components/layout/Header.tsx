@@ -1,7 +1,3 @@
-/* 
-Componente responsável por renderizar o cabeçalho do site, incluindo o nome da loja, um link para a página de produtos e um ícone de carrinho de compras. 
-Utiliza o componente Container para garantir que o conteúdo do cabeçalho esteja alinhado e espaçado corretamente.
-*/
 "use client";
 import Link from "next/link";
 import Container from "./Container";
@@ -20,25 +16,48 @@ const FavoriteIcon = dynamic(
 
 export default function Header() {
   return (
-    <header className="bg-white shadow-sm fixed w-full z-50">
+    <header id="home" className="bg-white shadow-sm fixed w-full z-50">
       <Container>
-        <div className="flex items-center justify-between py-4">
-          <div className="flex flex-col items-center">
-            <Link href="/" className="text-xl font-bold">
-              DevStore
+        <div className="flex flex-wrap items-center justify-between py-4 gap-y-2">
+          <div className="flex justify-center items-center md:flex-col md:items-start gap-14 md:gap-0">
+            <Link href="/" className="text-xl font-bold text-shadow-mauve-400">
+              DevStore_
             </Link>
-            <span className="text-shadow-mauve-400 text-sm">
+            <span className="text-shadow-mauve-400 text-xs md:text-sm text-gray-700">
               A place for developers
             </span>
           </div>
-          <nav>
-            <Link
-              href="/products"
-              className="hover:text-blue-600 transition-colors"
-            >
-              Produtos
-            </Link>
+
+          {/* w-full e order-last no mobile. Voltam ao normal no md: */}
+          <nav className="w-full md:w-auto order-last md:order-0">
+            <div className="flex items-center justify-center gap-3 md:gap-6 text-sm md:text-base">
+              <Link href="/" className="hover:text-blue-600 transition-colors">
+                Home
+              </Link>
+              <span className="text-gray-200">|</span>
+              <Link
+                href="/products"
+                className="hover:text-blue-600 transition-colors"
+              >
+                Produtos
+              </Link>
+              <span className="text-gray-200">|</span>
+              <Link
+                href="/#about"
+                className="hover:text-blue-600 transition-colors"
+              >
+                Sobre nós
+              </Link>
+              <span className="text-gray-200">|</span>
+              <Link
+                href="/#footer"
+                className=" hover:text-blue-600 transition-colors"
+              >
+                Contato
+              </Link>
+            </div>
           </nav>
+
           <div className="flex items-center gap-3 md:gap-4">
             <FavoriteIcon />
             <CartIcon />

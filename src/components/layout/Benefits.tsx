@@ -4,7 +4,7 @@ export default function Benefits() {
   return (
     <section className="py-12 hidden md:block">
       <div className="relative">
-        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-40">
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex items-center gap-8 bg-white px-6 py-4 rounded-lg shadow-lg">
           <div className="flex items-center space-x-2">
             <Truck size={24} />
             <span className="text-sm">

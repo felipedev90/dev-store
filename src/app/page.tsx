@@ -6,6 +6,7 @@ import { ProductGrid } from "@/components/product/ProductGrid";
 import { getAllCategories, getFeaturedProducts } from "@/lib/products";
 import Newsletter from "@/components/layout/Newsletter";
 import { Truck, Shield, CreditCard } from "lucide-react";
+import LogoSlider from "@/components/layout/LogoSlider";
 
 export default function Home() {
   const productsCategory = getAllCategories();
@@ -68,6 +69,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <LogoSlider />
 
       {/* CATEGORIAS */}
       <section>

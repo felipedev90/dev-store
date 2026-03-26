@@ -5,3 +5,23 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: ticker 40s linear infinite;
+}
+
+/* Pausa a animação quando o mouse passa por cima (UX muito boa!) 
+.animate-scroll:hover {
+  animation-play-state: paused;
+  
+}
+*/

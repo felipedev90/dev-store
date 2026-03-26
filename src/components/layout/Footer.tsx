@@ -9,10 +9,10 @@ export default function Footer() {
           <p className="text-cyan-950 text-lg lg:text-xl font-bold">
             © DevStore {new Date().getFullYear()}
           </p>
-          <p className="text-cyan-950 ">
+          <p>
             A place for developers to connect and grow.
           </p>
-          <p className="text-cyan-950 text-xs lg:text-sm">
+          <p className="text-xs lg:text-sm">
             Todos os direitos reservados.
           </p>
         </div>

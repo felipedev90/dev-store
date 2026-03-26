@@ -20,7 +20,7 @@ const FavoriteIcon = dynamic(
 
 export default function Header() {
   return (
-    <header className="bg-white shadow-sm fixed w-full z-50">
+    <header id="home" className="bg-white shadow-sm fixed w-full z-50">
       <Container>
         <div className="flex items-center justify-between py-4">
           <div className="flex flex-col items-center">
@@ -32,12 +32,32 @@ export default function Header() {
             </span>
           </div>
           <nav>
-            <Link
-              href="/products"
-              className="hover:text-blue-600 transition-colors"
-            >
-              Produtos
-            </Link>
+            <div className="flex items-center gap-6">
+              <Link href="/" className="hover:text-blue-600 transition-colors">
+                Home
+              </Link>
+              <span className="text-gray-200">|</span>
+              <Link
+                href="/products"
+                className="hover:text-blue-600 transition-colors"
+              >
+                Produtos
+              </Link>
+              <span className="text-gray-200">|</span>
+              <Link
+                href="/#about"
+                className="hover:text-blue-600 transition-colors"
+              >
+                Sobre nós
+              </Link>
+              <span className="text-gray-200">|</span>
+              <Link
+                href="/#footer"
+                className=" hover:text-blue-600 transition-colors"
+              >
+                Contato
+              </Link>
+            </div>
           </nav>
           <div className="flex items-center gap-3 md:gap-4">
             <FavoriteIcon />

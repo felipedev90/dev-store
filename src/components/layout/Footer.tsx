@@ -3,18 +3,14 @@ import { Linkedin, Github, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer>
+    <footer id="footer">
       <Container className="py-3 lg:py-6 lg:flex lg:flex-row lg:justify-around lg:items-center">
         <div className="flex flex-col justify-center items-center py-2">
           <p className="text-cyan-950 text-lg lg:text-xl font-bold">
             © DevStore {new Date().getFullYear()}
           </p>
-          <p>
-            A place for developers to connect and grow.
-          </p>
-          <p className="text-xs lg:text-sm">
-            Todos os direitos reservados.
-          </p>
+          <p>A place for developers to connect and grow.</p>
+          <p className="text-xs lg:text-sm">Todos os direitos reservados.</p>
         </div>
 
         <div className="hidden md:block md:w-px md:bg-gray-300 md:h-60 md:m-0"></div>

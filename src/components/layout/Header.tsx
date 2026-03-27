@@ -18,8 +18,8 @@ export default function Header() {
   return (
     <header id="home" className="bg-white shadow-sm fixed w-full z-50">
       <Container>
-        <div className="flex flex-wrap items-center justify-between py-4 gap-y-2">
-          <div className="flex justify-center items-center md:flex-col md:items-start gap-14 md:gap-0">
+        <div className="flex flex-wrap items-center justify-between py-2 px-1 gap-y-2">
+          <div className="flex justify-center flex-col md:items-start gap-1">
             <Link href="/" className="text-xl font-bold text-shadow-mauve-400">
               DevStore_
             </Link>
@@ -58,7 +58,7 @@ export default function Header() {
             </div>
           </nav>
 
-          <div className="flex items-center gap-3 md:gap-4">
+          <div className="flex items-center gap-4 md:gap-4">
             <FavoriteIcon />
             <CartIcon />
           </div>

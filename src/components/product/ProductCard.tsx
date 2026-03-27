@@ -3,15 +3,16 @@ import type { Product } from "@/types";
 import Badge from "../ui/Badge";
 import Image from "next/image";
 import Link from "next/link";
-import { Star, Trash2 } from "lucide-react";
+import { Star, Trash2, ShoppingCart } from "lucide-react";
 
 // Criamos uma interface para receber o produto e a função de remover opcional
 interface ProductCardProps {
   product: Product;
   onRemove?: () => void;
+  onAdd?: () => void;
 }
 
-export function ProductCard({ product, onRemove }: ProductCardProps) {
+export function ProductCard({ product, onRemove, onAdd }: ProductCardProps) {
   return (
     <div className="relative group h-full">
       <Link href={`/products/${product.slug}`}>
@@ -35,7 +36,7 @@ export function ProductCard({ product, onRemove }: ProductCardProps) {
 
           <h2 className="text-lg font-bold mt-2">{product.name}</h2>
 
-          <div className="flex items-center justify-between mt-auto pt-2">
+          <div className="flex items-start flex-col mt-auto pt-2">
             {product.originalPrice && (
               <span className="line-through text-gray-600 text-sm">
                 {formatPrice(product.originalPrice)}
@@ -55,16 +56,28 @@ export function ProductCard({ product, onRemove }: ProductCardProps) {
 
       {/* BOTÃO DE EXCLUIR FLUTUANTE - Só aparece se a prop onRemove for passada */}
       {onRemove && (
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            onRemove();
-          }}
-          className="absolute top-5 left-5 z-20 p-2 bg-white rounded-full shadow-md text-red-500 hover:bg-red-50 hover:scale-110 transition-all opacity-0 group-hover:opacity-100"
-          aria-label="Remover dos favoritos"
-        >
-          <Trash2 size={20} />
-        </button>
+        <>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              onRemove();
+            }}
+            className="absolute bottom-5 right-7 lg:right-5 z-20 p-2 bg-white rounded-full text-red-500 hover:bg-red-50 hover:scale-110 transition-all lg:opacity-0 group-hover:opacity-100"
+            aria-label="Remover dos favoritos"
+          >
+            <Trash2 size={20} />
+          </button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              onAdd?.();
+            }}
+            className="absolute bottom-5 right-16 lg:right-14 z-20 p-2 bg-white rounded-full text-green-500 hover:bg-green-50 hover:scale-110 transition-all lg:opacity-0 group-hover:opacity-100"
+            aria-label="Adicionar ao carrinho"
+          >
+            <ShoppingCart size={20} />
+          </button>
+        </>
       )}
     </div>
   );

@@ -21,7 +21,7 @@ export default function ProductGallery({
           src={selectedImage}
           alt={`${productName} - Imagem principal`}
           fill
-          className="object-contain rounded-lg shadow-md"
+          className="object-contain"
         />
       </div>
       <div className="flex space-x-4 overflow-x-auto">

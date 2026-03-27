@@ -1,38 +1,35 @@
-/* 
-Esse componente fornece uma interface para os usuários filtrarem e ordenarem os produtos. Ele inclui:
-- Um campo de busca para pesquisar produtos por nome ou descrição.
-- Botões para filtrar por categoria (teclados, mouses, headsets, monitores e acessórios).
-- Um dropdown para ordenar os produtos por critérios como mais recentes, menor preço, maior preço e mais avaliados.
-- Ele atualiza a URL com os parâmetros de filtro e ordenação, permitindo que os usuários compartilhem links específicos de produtos filtrados.
-*/
-
 "use client";
 
 import React, { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Search } from "lucide-react";
 
 export default function ProductFilter() {
-  const [search, setSearch] = useState("");
   const router = useRouter();
   const searchParams = useSearchParams();
+  const currentQuery = searchParams.get("q") || ""; // Pega o valor inicial da URL se existir
 
-  // Função usada pelo form de busca e pelo select de ordenação
+  const [search, setSearch] = useState(currentQuery);
+  const [prevQuery, setPrevQuery] = useState(currentQuery); // Estado para armazenar a última query submetida
+
+  if (currentQuery !== prevQuery) {
+    setSearch(currentQuery);
+    setPrevQuery(currentQuery);
+  }
+
   function updateFilter(key: string, value: string) {
-    // Cria uma cópia dos params atuais da URLS
     const params = new URLSearchParams(searchParams.toString());
 
-    // Adiciona ou atualiza o filtro
     if (value) {
       params.set(key, value);
     } else {
       params.delete(key);
     }
 
-    // Navega com todos os params
-    router.push(`/products?${params.toString()}`);
+    //impede que a tela pule pro topo ao filtrar
+    router.push(`/products?${params.toString()}`, { scroll: false });
   }
 
-  // Função usada pelos botões de categoria
   function handleCategory(category: string) {
     const param = new URLSearchParams(searchParams.toString());
 
@@ -42,11 +39,10 @@ export default function ProductFilter() {
       param.delete("category");
     }
     param.delete("q");
-    setSearch("");
-    router.push(`/products?${param.toString()}`);
+
+    router.push(`/products?${param.toString()}`, { scroll: false });
   }
 
-  // Função usada pelo form de busca
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const param = new URLSearchParams(searchParams.toString());
@@ -57,50 +53,66 @@ export default function ProductFilter() {
       param.delete("q");
     }
     param.delete("category");
-    router.push(`/products?${param.toString()}`);
+
+    router.push(`/products?${param.toString()}`, { scroll: false });
   };
+
+  //valores atuais da URL para preencher os <select>
+  const currentCategory = searchParams.get("category") || "";
+  const currentSort = searchParams.get("sort") || "";
 
   return (
     <div className="flex flex-col justify-center items-center m-auto gap-4 py-8">
-      <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Buscar produtos..."
-          className="border rounded-lg px-4 py-1 mx-2"
-        />
-        <button
-          type="submit"
-          className="bg-gray-600 text-white border rounded-lg cursor-pointer hover:bg-gray-900 px-4 py-1"
+      <div className="flex flex-wrap flex-col justify-center items-center gap-2 w-full max-w-4xl px-4">
+        {/* BUSCA */}
+        <form
+          onSubmit={handleSearch}
+          className="flex-1 flex items-center mx-0 my-auto border border-gray-300 rounded-lg px-0 gap-2 w-full md:w-auto"
         >
-          Buscar
-        </button>
-      </form>
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Buscar produtos..."
+            className="w-full md:w-64  rounded-lg px-4 py-2 focus:outline-none "
+          />
+          <button
+            type="submit"
+            className="text-gray-700 font-medium rounded-lg cursor-pointer p-2  whitespace-nowrap"
+          >
+            <Search className="w-6 h-6" />
+          </button>
+        </form>
 
-      <div className="flex flex-col md:flex-row gap-4">
-        <select
-          onChange={(e) => handleCategory(e.target.value)}
-          className="border border-black rounded-lg cursor-pointer px-4 py-1"
-        >
-          <option value="">Filtrar por categoria</option>
-          <option value="">Todos</option>
-          <option value="keyboards">Teclados</option>
-          <option value="mice">Mouses</option>
-          <option value="headsets">Headsets</option>
-          <option value="monitors">Monitores</option>
-          <option value="accessories">Acessórios</option>
-        </select>
-        <select
-          onChange={(e) => updateFilter("sort", e.target.value)}
-          className="border border-black rounded-lg cursor-pointer px-4 py-1"
-        >
-          <option value="">Ordenar por</option>
-          <option value="recent">Mais recentes</option>
-          <option value="price-asc">Menor preço</option>
-          <option value="price-desc">Maior preço</option>
-          <option value="rating">Mais avaliados</option>
-        </select>
+        {/* FILTROS E ORDENAÇÃO */}
+        <div className="flex flex-col w-full md:w-auto md:flex-row gap-3">
+          <select
+            // Define qual option deve aparecer selecionado baseado na URL
+            value={currentCategory}
+            onChange={(e) => handleCategory(e.target.value)}
+            className="w-full md:w-auto border border-gray-300 text-gray-700 bg-white rounded-lg cursor-pointer px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+          >
+            <option value="">Todas as categorias</option>
+            <option value="keyboards">Teclados</option>
+            <option value="mice">Mouses</option>
+            <option value="headsets">Headsets</option>
+            <option value="monitors">Monitores</option>
+            <option value="accessories">Acessórios</option>
+          </select>
+
+          <select
+            // Define qual option deve aparecer selecionado baseado na URL
+            value={currentSort}
+            onChange={(e) => updateFilter("sort", e.target.value)}
+            className="w-full md:w-auto border border-gray-300 text-gray-700 bg-white rounded-lg cursor-pointer px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+          >
+            <option value="">Ordenar por</option>
+            <option value="recent">Mais recentes</option>
+            <option value="price-asc">Menor preço</option>
+            <option value="price-desc">Maior preço</option>
+            <option value="rating">Mais avaliados</option>
+          </select>
+        </div>
       </div>
     </div>
   );

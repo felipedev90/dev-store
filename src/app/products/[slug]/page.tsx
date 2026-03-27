@@ -41,14 +41,15 @@ export default async function ProductPage({ params }: Props) {
   }
 
   return (
-    <Container className="py-8">
+    <Container className="p-2 mt-6 md:mt-0">
       <Link
         href="/products"
         className="text-sm text-blue-500 hover:underline mb-4 inline-block"
       >
         &larr; Voltar para produtos
       </Link>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-1 lg:gap-8 max-w-[100vw] md:max-w-[70vw] mx-auto p-1 md:p-6 shadow-xl rounded-lg">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-1 lg:gap-8 max-w-[100vw] md:max-w-[70vw] mx-auto p-4 md:p-6 shadow-xl rounded-lg">
         <div className="relative w-full bg-white rounded-lg">
           <ProductGallery productName={product.name} images={product.images} />
           <div className="absolute top-6 right-3 z-10">
@@ -63,7 +64,7 @@ export default async function ProductPage({ params }: Props) {
 
         <div className="flex flex-col gap-2">
           <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-bold">{product.name}</h2>
+            <h2 className="text-2xl font-bold pt-4">{product.name}</h2>
             <AddToFavoriteButton product={product} />
           </div>
           <span className="flex items-center gap-1 pb-2 border-b">
@@ -95,13 +96,14 @@ export default async function ProductPage({ params }: Props) {
               <li key={feature}>{feature}</li>
             ))}
           </ul>
+
           <div className="flex flex-col">
             {product.originalPrice && (
               <span className="text-gray-600 line-through">
                 {formatPrice(product.originalPrice)}
               </span>
             )}
-            <span className="text-3xl font-bold pb-4 text-end">
+            <span className="text-3xl font-bold pb-4 pt-2">
               {formatPrice(product.price)}
             </span>
             <AddToCartButton product={product} />

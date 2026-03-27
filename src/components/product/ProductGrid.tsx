@@ -4,9 +4,14 @@ import type { Product } from "@/types";
 interface ProductGridProps {
   products: Product[];
   onRemoveItem?: (productId: string) => void;
+  onAddItem?: (product: Product) => void;
 }
 
-export function ProductGrid({ products, onRemoveItem }: ProductGridProps) {
+export function ProductGrid({
+  products,
+  onRemoveItem,
+  onAddItem,
+}: ProductGridProps) {
   const isEmpty = products.length === 0;
 
   if (isEmpty) {
@@ -24,6 +29,7 @@ export function ProductGrid({ products, onRemoveItem }: ProductGridProps) {
           key={product.id}
           product={product}
           onRemove={onRemoveItem ? () => onRemoveItem(product.id) : undefined}
+          onAdd={onAddItem ? () => onAddItem(product) : undefined}
         />
       ))}
     </div>

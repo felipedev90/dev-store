@@ -33,7 +33,7 @@ export default function Newsletter() {
             </button>
           </div>
 
-          <div className="mt-4 flex items-center md:justify-start">
+          <div className="mt-4 flex items-center md:justify-start m-auto">
             <input type="checkbox" id="privacy" className="mr-2" required />
             <label htmlFor="privacy" className="text-sm text-gray-300">
               Eu concordo com a{" "}

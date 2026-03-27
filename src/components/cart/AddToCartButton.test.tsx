@@ -17,7 +17,7 @@ const mockProduct: Product = {
   tags: ["tag1"],
   rating: 4.5,
   reviewCount: 10,
-  inStock: true, // Começamos com ele em estoque!
+  inStock: true,
   features: ["feature1"],
   createdAt: "2024-01-01T00:00:00Z",
 };

@@ -40,7 +40,6 @@ export default function CheckoutPage(){
                         ...addressData,
                     }
                 }));
-                // Move o foco para o campo "Número" após preencher o endereço
                 document.getElementById("number")?.focus();
             } else {
                 alert("CEP não encontrado. Por favor, verifique e tente novamente.");

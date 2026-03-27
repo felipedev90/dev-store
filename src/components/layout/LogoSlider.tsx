@@ -3,13 +3,13 @@ import Image from "next/image";
 
 const partners = [
   { name: "Dell", logo: "/images/partners/dell.svg" },
-  { name: "Nvidia", logo: "/images/partners/nvidia.svg" }, // Substituiu a Logitech
+  { name: "Nvidia", logo: "/images/partners/nvidia.svg" },
   { name: "LG", logo: "/images/partners/lg.svg" },
   { name: "Samsung", logo: "/images/partners/samsung.svg" },
   { name: "HP", logo: "/images/partners/hp.svg" },
   { name: "Razer", logo: "/images/partners/razer.svg" },
   { name: "Corsair", logo: "/images/partners/corsair.svg" },
-  { name: "Intel", logo: "/images/partners/intel.svg" }, // Adicionado para dar mais volume
+  { name: "Intel", logo: "/images/partners/intel.svg" },
 ];
 
 export default function LogoSlider() {

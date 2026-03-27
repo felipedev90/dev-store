@@ -22,6 +22,7 @@ export function ProductCard({ product, onRemove, onAdd }: ProductCardProps) {
               src={product.images[0]}
               alt={product.name}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
               className="object-contain"
             />
             {product.originalPrice && (

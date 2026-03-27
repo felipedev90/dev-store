@@ -22,6 +22,7 @@ export default function ProductGallery({
           alt={`${productName} - Imagem principal`}
           fill
           className="object-contain"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
         />
       </div>
       <div className="flex space-x-4 overflow-x-auto">
@@ -36,6 +37,7 @@ export default function ProductGallery({
               alt={`${productName} - Imagem ${index + 1}`}
               fill
               className="object-cover rounded-lg"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
             />
           </div>
         ))}

@@ -3,8 +3,8 @@ import { ProductGrid } from "@/components/product/ProductGrid";
 import { getFeaturedProducts } from "@/lib/products";
 import Link from "next/link";
 
-export default function FeaturedProducts() {
-  const featuredProducts = getFeaturedProducts();
+export default async function FeaturedProducts() {
+  const featuredProducts = await getFeaturedProducts();
 
   return (
     <section className="py-12">

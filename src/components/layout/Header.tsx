@@ -2,6 +2,9 @@
 import Link from "next/link";
 import Container from "./Container";
 import dynamic from "next/dynamic";
+import { useSyncExternalStore } from "react";
+import { useAuthStore } from "@/store/auth-store";
+import { useRouter } from "next/navigation";
 
 const CartIcon = dynamic(() => import("@/components/cart/CartIcon"), {
   ssr: false,
@@ -14,7 +17,25 @@ const FavoriteIcon = dynamic(
   },
 );
 
+function useIsClient() {
+  return useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+}
+
 export default function Header() {
+  const token = useAuthStore((state) => state.token);
+  const logout = useAuthStore((state) => state.logout);
+  const isClient = useIsClient();
+  const router = useRouter();
+
+  function handleLogout() {
+    logout();
+    router.push("/");
+  }
+
   return (
     <header id="home" className="bg-white shadow-sm fixed w-full z-50">
       <Container>
@@ -59,6 +80,21 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-4 md:gap-4">
+            {isClient && token ? (
+              <button
+                onClick={handleLogout}
+                className="hover:text-blue-600 transition-colors"
+              >
+                Logout
+              </button>
+            ) : (
+              <Link
+                href="/login"
+                className="hover:text-blue-600 transition-colors"
+              >
+                Login
+              </Link>
+            )}
             <FavoriteIcon />
             <CartIcon />
           </div>

@@ -77,6 +77,8 @@ export const useCartStore = create<CartStore>()(
     {
       // nome da chave no localStorage
       name: "cart-storage",
+      // Persiste apenas os itens, não o estado de abertura do carrinho
+      partialize: (state) => ({ items: state.items }),
     },
   ),
 );

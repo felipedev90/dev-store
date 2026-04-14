@@ -1,15 +1,17 @@
-import type { MetadataRoute } from "next";
 import { getAllProducts, getAllCategories } from "@/lib/products";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap() {
   const baseUrl = "https://dev-store-zeta.vercel.app";
 
-  const products = getAllProducts().map((product) => ({
+  const productsData = await getAllProducts();
+
+  const products = productsData.map((product) => ({
     url: `${baseUrl}/products/${product.slug}`,
     lastModified: new Date(product.createdAt),
   }));
 
-  const categories = getAllCategories().map((category) => ({
+  const categoriesData = await getAllCategories();
+  const categories = categoriesData.map((category) => ({
     url: `${baseUrl}/products?category=${category.slug}`,
     lastModified: new Date(),
   }));

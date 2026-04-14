@@ -3,8 +3,8 @@ import Link from "next/link";
 import Container from "@/components/layout/Container";
 import { getAllCategories } from "@/lib/products";
 
-export default function Categories() {
-  const productsCategory = getAllCategories();
+export default async function Categories() {
+  const productsCategory = await getAllCategories();
 
   return (
     <section>

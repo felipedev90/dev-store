@@ -15,7 +15,7 @@ DevStore é um e-commerce completo que demonstra na prática o uso de diferentes
 ## Lighthouse Scores
 
 <p align="center">
-  <img src="/public/images/lighthouse/lighthouse.png" alt="Lighthouse Scores" />
+  <img src="/images/lighthouse/lighthouse.png" alt="Lighthouse Scores" />
 </p>
 
 | Performance | Accessibility | Best Practices | SEO |

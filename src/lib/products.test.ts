@@ -3,8 +3,6 @@ import {
   getAllProducts,
   getProductBySlug,
   getFeaturedProducts,
-  getProductsByCategory,
-  getFilteredProducts,
 } from "./products";
 import * as api from "./api";
 
@@ -129,7 +127,9 @@ describe("getAllProducts", () => {
         new Error("Erro interno do servidor"),
       );
 
-      await expect(getAllProducts()).rejects.toThrow("Erro interno do servidor");
+      await expect(getAllProducts()).rejects.toThrow(
+        "Erro interno do servidor",
+      );
     });
   });
 });

@@ -1,5 +1,9 @@
 import { LOCALE, CURRENCY } from "./constants";
 
+type FormatDateOptions = {
+  showTime?: boolean;
+};
+
 // Função para formatar o preço em centavos para o formato de moeda local
 // Recebe centavos e retorna string formatada (formatPrice(29990) => "R$ 299,90")
 export function formatPrice(priceInCents: number): string {
@@ -41,3 +45,25 @@ export const formatPhone = (value: string) => {
     .replace(/^(\d{2})(\d)/, "($1) $2") // Adiciona parênteses ao DDD
     .replace(/(\d{4,5})(\d{4})$/, "$1-$2"); // Adiciona hífen entre os últimos 8 dígitos
 };
+
+// Função para formatar data
+export function formatDate(
+  dateString: string,
+  options: FormatDateOptions = {},
+) {
+  if (!dateString) return "";
+
+  const date = new Date(dateString);
+
+  const { showTime = false } = options;
+  return new Intl.DateTimeFormat(LOCALE, {
+    timeZone: "America/Sao_Paulo",
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    ...(showTime && {
+      hour: "2-digit",
+      minute: "2-digit",
+    }),
+  }).format(date);
+}

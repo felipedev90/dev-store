@@ -14,7 +14,7 @@ export default function Hero() {
         className="object-cover"
       />
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/50" />
 
       {/* Conteúdo */}
       <div className="relative z-10 text-white text-center px-4">

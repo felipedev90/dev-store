@@ -10,7 +10,8 @@ export default async function sitemap() {
     lastModified: new Date(product.createdAt),
   }));
 
-  const categories = getAllCategories().map((category) => ({
+  const categoriesData = await getAllCategories();
+  const categories = categoriesData.map((category) => ({
     url: `${baseUrl}/products?category=${category.slug}`,
     lastModified: new Date(),
   }));

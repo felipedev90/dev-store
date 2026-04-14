@@ -1,14 +1,9 @@
 import type { Product, Category } from "@/types";
-import productsData from "@/data/products.json";
-import categoriesData from "@/data/categories.json";
 import { apiClient } from "./api";
 
 interface ApiProduct extends Omit<Product, "inStock"> {
   stock: number;
 }
-
-const products: Product[] = productsData as unknown as Product[];
-const categories: Category[] = categoriesData as unknown as Category[];
 
 export async function getAllProducts(): Promise<Product[]> {
   const data = await apiClient<ApiProduct[]>("/products");
@@ -90,11 +85,15 @@ export async function getFilteredProducts(params: {
 }
 
 // Função que retorna todas as categorias
-export function getAllCategories(): Category[] {
-  return categories;
+export async function getAllCategories(): Promise<Category[]> {
+  const categoriesData = await apiClient<Category[]>("/categories");
+  return categoriesData;
 }
 
 // Função que retorna uma categoria pelo slug. Se não encontrar retorna undefined
-export function getCategoryBySlug(slug: string): Category | undefined {
-  return categories.find((c) => c.slug === slug);
+export async function getCategoryBySlug(
+  slug: string,
+): Promise<Category | undefined> {
+  const categoriesData = await getAllCategories();
+  return categoriesData.find((c) => c.slug === slug);
 }

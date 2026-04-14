@@ -1,12 +1,9 @@
-
-
 export async function apiClient<T>(
   endpoint: string,
   options?: RequestInit,
 ): Promise<T> {
   // Lê a variável de ambiente e monta a URL completa
-  const baseUrl =
-    process.env.NEXT_PUBLIC_API_URL || "";
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL || "";
   const url = `${baseUrl}${endpoint}`;
 
   // Monta os headers padrão e mescla com as options recebidas
@@ -28,7 +25,19 @@ export async function apiClient<T>(
 
   // Tratamento de erro
   if (!response.ok) {
-    throw new Error(`Erro na API: Status ${response.status} ao acessar ${url}`);
+    if (response.status === 401) {
+      if (typeof window !== "undefined") {
+        document.cookie = "auth-token=; path=/; max-age=0";
+        window.location.href = "/login";
+      }
+      throw new Error("Não autorizado");
+    } else if (response.status === 500) {
+      throw new Error(`Erro interno do servidor ao acessar ${url}`);
+    } else {
+      throw new Error(
+        `Erro na API: Status ${response.status} ao acessar ${url}`,
+      );
+    }
   }
 
   return response.json() as Promise<T>;

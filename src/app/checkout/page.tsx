@@ -29,6 +29,8 @@ export default function CheckoutPage() {
       zipCode: "",
     },
   });
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,16 +40,26 @@ export default function CheckoutPage() {
       quantity: item.quantity,
     }));
 
-    await apiClient("/orders", {
-      method: "POST",
-      body: JSON.stringify({ items: orderItems }),
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    try {
+      setLoading(true);
+      await apiClient("/orders", {
+        method: "POST",
+        body: JSON.stringify({ items: orderItems }),
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-    clearCart();
-    router.push("/checkout/success");
+      clearCart();
+      router.push("/checkout/success");
+    } catch (error) {
+      console.error("Erro ao processar o pedido:", error);
+      setError(
+        "Ocorreu um erro ao processar seu pedido. Por favor, tente novamente.",
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleCepChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -307,11 +319,17 @@ export default function CheckoutPage() {
           </div>
 
           <div className="pt-4 border-t border-gray-200">
+            {error && (
+              <div className="mb-4 p-3 bg-red-50 text-red-600 rounded-lg text-sm border border-red-100">
+                {error}
+              </div>
+            )}
             <button
               type="submit"
-              className="w-full md:w-auto md:float-right bg-blue-600 text-white rounded-lg px-8 py-3 font-semibold hover:bg-blue-700 transition-colors"
+              disabled={loading}
+              className="w-full md:w-auto md:float-right bg-blue-600 text-white rounded-lg px-8 py-3 font-semibold hover:bg-blue-700 transition-colors disabled:bg-blue-400 disabled:cursor-not-allowed"
             >
-              Finalizar Compra
+              {loading ? "Processando..." : "Finalizar Pedido"}
             </button>
           </div>
         </form>

@@ -38,7 +38,7 @@ export default function Header() {
   }
 
   return (
-    <header id="home" className="bg-white shadow-sm fixed w-full z-50">
+    <header id="home" className="bg-white  fixed w-full z-50">
       <Container>
         <div className="flex flex-wrap items-center justify-between py-2 px-1 gap-y-2">
           <div className="flex justify-center flex-col md:items-start md:gap-1">

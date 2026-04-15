@@ -41,7 +41,7 @@ export default function Header() {
     <header id="home" className="bg-white shadow-sm fixed w-full z-50">
       <Container>
         <div className="flex flex-wrap items-center justify-between py-2 px-1 gap-y-2">
-          <div className="flex justify-center flex-col md:items-start gap-1">
+          <div className="flex justify-center flex-col md:items-start md:gap-1">
             <Link href="/" className="text-xl font-bold text-shadow-mauve-400">
               DevStore_
             </Link>
@@ -52,25 +52,25 @@ export default function Header() {
 
           {/* w-full e order-last no mobile. Voltam ao normal no md: */}
           <nav className="w-full md:w-auto order-last md:order-0">
-            <div className="flex items-center justify-center py-2 gap-3 md:gap-6 text-sm md:text-base">
+            <div className="flex items-center justify-center pt-1 gap-3 md:gap-6 text-sm md:text-base">
               <Link href="/" className="hover:text-blue-600 transition-colors">
                 Home
               </Link>
-              <span className="text-gray-200">|</span>
+              <span className="text-gray-200 lg:hidden">|</span>
               <Link
                 href="/products"
                 className="hover:text-blue-600 transition-colors"
               >
                 Produtos
               </Link>
-              <span className="text-gray-200">|</span>
+              <span className="text-gray-200 lg:hidden">|</span>
               <Link
                 href="/#about"
                 className="hover:text-blue-600 transition-colors"
               >
                 Sobre nós
               </Link>
-              <span className="text-gray-200">|</span>
+              <span className="text-gray-200 lg:hidden">|</span>
               <Link
                 href="/#footer"
                 className=" hover:text-blue-600 transition-colors"
@@ -99,9 +99,7 @@ export default function Header() {
                 </button>
               </div>
             ) : (
-              <Link
-                href="/login"
-              >
+              <Link href="/login">
                 <UserRound
                   size={24}
                   className="inline-block cursor-pointer"

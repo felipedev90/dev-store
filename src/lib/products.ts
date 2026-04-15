@@ -6,7 +6,9 @@ interface ApiProduct extends Omit<Product, "inStock"> {
 }
 
 export async function getAllProducts(): Promise<Product[]> {
-  const data = await apiClient<ApiProduct[]>("/products");
+  const data = await apiClient<ApiProduct[]>("/products", {
+    next: { revalidate: 60 }, // Revalida os dados a cada 60 segundos
+  });
 
   return data.map((produto) => ({
     ...produto,
@@ -17,9 +19,24 @@ export async function getAllProducts(): Promise<Product[]> {
 export async function getProductBySlug(
   slug: string,
 ): Promise<Product | undefined> {
-  const produtos = await getAllProducts();
-  return produtos.find((produto) => produto.slug === slug);
+  try {
+    const data = await apiClient<ApiProduct>(`/products/slug/${slug}`, {
+      next: { revalidate: 60 }, // Revalida os dados a cada 60 segundos
+    });
+
+    return { ...data, inStock: data.stock > 0 };
+  } catch (error) {
+    console.error("Erro ao buscar produto pelo slug:", error);
+    return undefined;
+  }
 }
+
+// export async function getProductBySlug(
+//   slug: string,
+// ): Promise<Product | undefined> {
+//   const produtos = await getAllProducts();
+//   return produtos.find((produto) => produto.slug === slug);
+// }
 
 export async function getFeaturedProducts(
   limit: number = 8,
@@ -86,7 +103,9 @@ export async function getFilteredProducts(params: {
 
 // Função que retorna todas as categorias
 export async function getAllCategories(): Promise<Category[]> {
-  const categoriesData = await apiClient<Category[]>("/categories");
+  const categoriesData = await apiClient<Category[]>("/categories", {
+    next: { revalidate: 60 }, // Revalida os dados a cada 60 segundos
+  });
   return categoriesData;
 }
 

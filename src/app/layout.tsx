@@ -4,6 +4,7 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import "../styles/globals.css";
 import CartSidebar from "@/components/cart/CartSideBar";
+import DemoLoginButton from "@/components/layout/DemoLoginButton";
 
 
 const inter = Inter({
@@ -28,6 +29,7 @@ export default function RootLayout({
         <main className="flex-1 pt-18">{children}</main>
         <Footer />
         <CartSidebar />
+        <DemoLoginButton />
       </body>
     </html>
   );

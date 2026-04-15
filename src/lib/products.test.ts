@@ -5,6 +5,7 @@ import {
   getFeaturedProducts,
 } from "./products";
 import * as api from "./api";
+import next from "next";
 
 interface ApiProduct {
   id: string;
@@ -119,7 +120,9 @@ describe("getAllProducts", () => {
 
       await getAllProducts();
 
-      expect(spy).toHaveBeenCalledWith("/products");
+      expect(spy).toHaveBeenCalledWith("/products", {
+        next: { revalidate: 60 },
+      });
     });
 
     it("deve propagar erro lançado pelo apiClient", async () => {
@@ -135,30 +138,35 @@ describe("getAllProducts", () => {
 });
 
 describe("getProductBySlug", () => {
-  beforeEach(() => {
-    vi.spyOn(api, "apiClient").mockResolvedValue([
-      makeApiProduct({ id: "1", slug: "teclado-mecanico", stock: 5 }),
-      makeApiProduct({ id: "2", slug: "mouse-gamer", stock: 0 }),
-    ]);
-  });
-
   afterEach(() => {
     vi.restoreAllMocks();
   });
 
   it("deve retornar o produto com o slug correto", async () => {
+    vi.spyOn(api, "apiClient").mockResolvedValueOnce(
+      makeApiProduct({ id: "2", slug: "mouse-gamer", stock: 0 }),
+    );
+
     const product = await getProductBySlug("mouse-gamer");
 
     expect(product?.slug).toBe("mouse-gamer");
   });
 
   it("deve retornar undefined quando o slug não existir", async () => {
+    vi.spyOn(api, "apiClient").mockRejectedValueOnce(
+      new Error("Erro na API: Status 404"),
+    );
+
     const product = await getProductBySlug("slug-inexistente");
 
     expect(product).toBeUndefined();
   });
 
   it("deve retornar o produto com inStock mapeado corretamente", async () => {
+    vi.spyOn(api, "apiClient").mockResolvedValueOnce(
+      makeApiProduct({ id: "2", slug: "mouse-gamer", stock: 0 }),
+    );
+
     const product = await getProductBySlug("mouse-gamer");
 
     expect(product?.inStock).toBe(false);
